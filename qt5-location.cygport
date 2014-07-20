@@ -18,7 +18,8 @@ PKG_NAMES="libQt5Positioning5 libQt5Positioning-devel ${NAME}-examples ${NAME}-d
 libQt5Positioning5_CONTENTS="
 	usr/bin/cygQt5Positioning-5.dll
 	usr/lib/qt5/plugins/position/
-        usr/lib/qt5/qml/QtPositioning/
+	usr/lib/qt5/qml/QtPositioning/
+	usr/share/doc/
 "
 libQt5Positioning_devel_CONTENTS="
 	usr/include/qt5/QtPositioning/
