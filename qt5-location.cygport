@@ -1,7 +1,7 @@
 inherit qt5-qmake
 
 NAME="qt5-location"
-VERSION=5.2.1
+VERSION=5.3.2
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Qt C++ application framework (Positioning API)"
@@ -30,7 +30,7 @@ libQt5Positioning_devel_CONTENTS="
 	usr/lib/qt5/mkspecs/modules/qt_lib_positioning_private.pri
 "
 qt5_location_examples_CATEGORY="X11"
-qt5_location_examples_CONTENTS="usr/lib/qt5/examples/positioning/"
+qt5_location_examples_CONTENTS="usr/lib/qt5/examples/*positioning/"
 qt5_location_doc_CATEGORY="Doc"
 qt5_location_doc_CONTENTS="usr/share/qt5/doc/qtpositioning*"
 
