@@ -1,7 +1,7 @@
 inherit qt5-qmake
 
 NAME="qt5-location"
-VERSION=5.6.2
+VERSION=5.9.2
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Qt C++ application framework (Positioning API)"
@@ -13,6 +13,10 @@ investments made on one platform across many others."
 HOMEPAGE="https://www.qt.io/"
 SRC_URI="http://download.qt.io/official_releases/qt/${VERSION%.*}/${VERSION}/submodules/qtlocation-opensource-src-${VERSION}.tar.xz"
 SRC_DIR="qtlocation-opensource-src-${VERSION}"
+PATCH_URI="
+	5.9-as-needed.patch
+	5.9-cygwin-sched.patch
+"
 
 PKG_NAMES="libQt5Location5 libQt5Location-devel
 	libQt5Positioning5 libQt5Positioning-devel

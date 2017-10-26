@@ -1,0 +1,29 @@
+--- origsrc/qtlocation-opensource-src-5.9.2/src/location/declarativemaps/declarativemaps.pri	2017-09-25 11:55:20.000000000 -0500
++++ src/qtlocation-opensource-src-5.9.2/src/location/declarativemaps/declarativemaps.pri	2017-10-23 23:58:44.274902700 -0500
+@@ -58,6 +58,6 @@ SOURCES += \
+            declarativemaps/mapitemviewdelegateincubator.cpp
+ 
+ load(qt_build_paths)
+-LIBS_PRIVATE += -L$$MODULE_BASE_OUTDIR/lib -lpoly2tri$$qtPlatformTargetSuffix() -lclip2tri$$qtPlatformTargetSuffix()
++LIBS_PRIVATE += -L$$MODULE_BASE_OUTDIR/lib -lclip2tri$$qtPlatformTargetSuffix() -lpoly2tri$$qtPlatformTargetSuffix()
+ 
+ 
+--- origsrc/qtlocation-opensource-src-5.9.2/src/location/location.pro	2017-09-25 11:55:20.000000000 -0500
++++ src/qtlocation-opensource-src-5.9.2/src/location/location.pro	2017-10-24 00:01:38.219918300 -0500
+@@ -44,4 +44,4 @@ HEADERS += $$PUBLIC_HEADERS $$PRIVATE_HE
+ 
+ load(qt_module)
+ 
+-LIBS_PRIVATE += -L$$MODULE_BASE_OUTDIR/lib -lclip2tri$$qtPlatformTargetSuffix()
++LIBS_PRIVATE += -L$$MODULE_BASE_OUTDIR/lib -lclipper$$qtPlatformTargetSuffix()
+--- origsrc/qtlocation-opensource-src-5.9.2/src/plugins/geoservices/mapboxgl/mapboxgl.pro	2017-09-25 11:55:20.000000000 -0500
++++ src/qtlocation-opensource-src-5.9.2/src/plugins/geoservices/mapboxgl/mapboxgl.pro	2017-10-24 01:43:15.476174600 -0500
+@@ -32,7 +32,7 @@ INCLUDEPATH += ../../../3rdparty/mapbox-
+ include(../../../3rdparty/zlib_dependency.pri)
+ 
+ load(qt_build_paths)
+-LIBS_PRIVATE += -L$$MODULE_BASE_OUTDIR/lib -lqmapboxgl$$qtPlatformTargetSuffix()
++LIBS += -L$$MODULE_BASE_OUTDIR/lib -lqmapboxgl$$qtPlatformTargetSuffix()
+ 
+ qtConfig(icu) {
+     include(../../../3rdparty/icu_dependency.pri)

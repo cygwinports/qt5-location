@@ -1,0 +1,17 @@
+--- origsrc/qtlocation-opensource-src-5.9.2/src/3rdparty/mapbox-gl-native/platform/default/thread.cpp	2017-08-22 04:57:11.000000000 -0500
++++ src/qtlocation-opensource-src-5.9.2/src/3rdparty/mapbox-gl-native/platform/default/thread.cpp	2017-10-24 00:18:03.260631800 -0500
+@@ -25,12 +25,14 @@ void setCurrentThreadName(const std::str
+ }
+ 
+ void makeThreadLowPriority() {
++#ifndef __CYGWIN__
+     struct sched_param param;
+     param.sched_priority = 0;
+ 
+     if (sched_setscheduler(0, SCHED_IDLE, &param) != 0) {
+         Log::Warning(Event::General, "Couldn't set thread scheduling policy");
+     }
++#endif
+ }
+ 
+ } // namespace platform
